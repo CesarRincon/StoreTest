@@ -12,11 +12,16 @@ const Totalizer = () => {
 
     return (
         <View style={totalizerStyles.container}>
-            <Text style={totalizerStyles.textTotalizer}>
+            <Text
+                style={totalizerStyles.textTotalizer}
+                testID="totalizer-text"
+            >
                 $ {totalizer}
             </Text>
-            <TouchableOpacity style={totalizerStyles.containerButton}
+            <TouchableOpacity
+                style={totalizerStyles.containerButton}
                 onPress={() => linkTo("checkout")}
+                testID="pay-button"
             >
                 <Text style={totalizerStyles.textButton}>Go to Pay</Text>
             </TouchableOpacity>
