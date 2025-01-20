@@ -46,6 +46,7 @@ const Toast = () => {
 
     return (
         <Animated.View
+            testID="container"
             style={[
                 toastStyles.toastContainer,
                 {

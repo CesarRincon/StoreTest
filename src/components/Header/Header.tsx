@@ -16,8 +16,14 @@ const Header = () => {
         home: <TouchableOpacity
             style={headerStyles.containerIconCart}
             onPress={() => linkTo("cart")}
+            testID="cart-button"
         >
-            <Image source={{ uri: "https://img.icons8.com/dotty/80/shopping-cart.png" }} width={30} height={30} />
+            <Image
+                source={{ uri: "https://img.icons8.com/dotty/80/shopping-cart.png" }}
+                width={30}
+                height={30}
+                testID="cart-icon"
+            />
             {
                 cart?.products?.length > 0 &&
                 <View style={headerStyles.containerBadgeCart}>
@@ -31,7 +37,12 @@ const Header = () => {
             style={headerStyles.containerIconClearCart}
             onPress={() => clearCartHandler()}
         >
-            <Image source={{ uri: "https://img.icons8.com/material-outlined/24/00000/trash--v1.png" }} width={30} height={30} />
+            <Image
+                source={{ uri: "https://img.icons8.com/material-outlined/24/00000/trash--v1.png" }}
+                width={30}
+                height={30}
+                testID="clear-cart-icon"
+            />
         </TouchableOpacity>,
 
     }
@@ -53,8 +64,16 @@ const Header = () => {
                             checkoutManager.step !== 1 &&
                             <TouchableOpacity
                                 onPress={() => linkTo("home")}
+                                testID="back-button"
+
                             >
-                                <Image source={{ uri: "https://img.icons8.com/sf-black-filled/64/FFFFFF/back.png" }} width={30} height={30} />
+                                <Image
+                                    source={{ uri: "https://img.icons8.com/sf-black-filled/64/FFFFFF/back.png" }}
+                                    width={30}
+                                    height={30}
+                                    testID="back-icon"
+
+                                />
                             </TouchableOpacity>
                         }
                         <View style={{ flex: 1 }}>

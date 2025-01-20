@@ -54,10 +54,10 @@ const AddressMode = () => {
             style={addressModeStyles.scrollView}
         >
             <Image source={{ uri: "https://img.icons8.com/ios/100/shopping-bag--v1.png" }} width={45} height={45} />
-            <Text style={addressModeStyles.title}>Ahora, tu dirección de envío</Text>
+            <Text style={addressModeStyles.title}>Now, your shipping address.</Text>
             <Text
                 style={addressModeStyles.description}
-            >Usaremos tu dirección únicamente para asegurarnos de que tu pedido llegue a ti sin problemas.</Text>
+            >We will use your address only to ensure that your order reaches you without any issues.</Text>
             <View style={addressModeStyles.containerInput}>
                 <Text style={addressModeStyles.labelInput}>Department</Text>
                 <Dropdown
@@ -80,6 +80,7 @@ const AddressMode = () => {
             <View style={addressModeStyles.containerInput}>
                 <Text style={addressModeStyles.labelInput}>Address</Text>
                 <TextInput
+                    testID='input-neighborhood'
                     style={addressModeStyles.input}
                     onChangeText={(value: string) => handleChangeFormAddress("neighborhood", value)}
                 />

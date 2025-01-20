@@ -28,6 +28,7 @@ const ButtonAddToCart = (props: any) => {
 
     return (
         <TouchableOpacity
+            testID="add-to-cart-button"
             style={{
                 ...buttonAddStyles.container, opacity: productInCart ? 0.5 : 1
             }}

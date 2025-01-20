@@ -1243,38 +1243,38 @@ export const validateInputs = (inputs: any) => {
     const errors: Record<string, string> = {};
 
     if (!validatorsCustomerInfo.email(inputs.email)) {
-        errors.email = "Correo electrónico no válido";
+        errors.email = "Invalid email address";
     }
     if (!validatorsCustomerInfo.name(inputs.name)) {
-        errors.name = "Nombre no válido (solo letras y mínimo 4 caracteres)";
+        errors.name = "Invalid name (only letters and at least 4 characters)";
     }
     if (!validatorsCustomerInfo.lastName(inputs.lastName)) {
-        errors.lastName = "Apellido no válido (solo letras y mínimo 4 caracteres)";
+        errors.lastName = "Invalid last name (only letters and at least 4 characters)";
     }
     if (!validatorsCustomerInfo.idNumber(inputs.idNumber)) {
-        errors.idNumber = "Número de documento no válido (6 a 10 dígitos)";
+        errors.idNumber = "Invalid document number (6 to 10 digits)";
     }
     if (!validatorsCustomerInfo.phone(inputs.phone)) {
         errors.phone = "Número de teléfono no válido (debe tener 10 dígitos)";
     }
     if (!validatorsCustomerInfo.idDocumentType(inputs.idDocumentType)) {
-        errors.idDocumentType = "Debe seleccionar un tipo de documento válido";
+        errors.idDocumentType = "Invalid phone number (must have 10 digits)";
     }
     return errors;
 };
 export const validateInputsCreditCard = (inputs: any) => {
     const errors: Record<string, string> = {};
     if (!cardValidators.cardholderName(inputs.cardholderName)) {
-        errors.cardholderName = "El nombre del titular debe tener solo letras y al menos 4 palabras.";
+        errors.cardholderName = "The cardholder's name must contain only letters and be at least 4 characters long.";
     }
     if (inputs.cardNumber && !cardValidators.cardNumber(inputs.cardNumber)) {
-        errors.cardNumber = "El número de la tarjeta debe tener 16 dígitos.";
+        errors.cardNumber = "The card number must have 16 digits.";
     }
     if (inputs?.expiration && !cardValidators.expiration(inputs.expiration)) {
-        errors.expiration = "La fecha de expiración debe estar en formato MM/YY y no debe estar vencida.";
+        errors.expiration = "The expiration date must be in MM/YY format and must not be expired.";
     }
     if (inputs.cvv && !cardValidators.cvv(inputs.cvv)) {
-        errors.cvv = "El CVV debe tener 3 dígitos.";
+        errors.cvv = "The CVV must have 3 digits.";
     }
     return errors;
 };

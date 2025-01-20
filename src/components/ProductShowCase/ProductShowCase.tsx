@@ -27,7 +27,7 @@ const ProductShowCase = (props: any) => {
         >
             {
                 isLoading ?
-                    <ActivityIndicator color={"#000"} size={40} />
+                    <ActivityIndicator color={"#000"} size={40} testID='activity-indicator' />
                     :
                     <>
                         <View style={productShowCaseStyles.containerHeaderShowCase}>
@@ -37,6 +37,7 @@ const ProductShowCase = (props: any) => {
                         <View style={productShowCaseStyles.containerFlatList}>
                         </View>
                         <FlatList
+                            testID='flatlist'
                             horizontal={horizontal}
                             ref={flatListRef}
                             data={data}
