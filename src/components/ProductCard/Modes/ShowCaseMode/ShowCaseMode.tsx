@@ -6,7 +6,7 @@ import { showCaseModeStyles } from './ShowCaseModeStyles';
 const ShowCaseMode = (props: any) => {
     const { item } = props;
     return (
-        <View style={showCaseModeStyles.container}>
+        <View style={showCaseModeStyles.container} testID="showcase-mode">
             <Image source={{ uri: item?.image }} width={90} height={100} resizeMode='contain' />
             <Text
                 numberOfLines={2}
