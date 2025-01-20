@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 
-const Dropdown = ({ style, data, onChange, disabled = false, value }: any) => {
+const Dropdown = ({ style = {}, data, onChange, disabled = false, value }: any) => {
     const [showOptions, setShowOptions] = useState<boolean>(false)
     const [valueDropdown, setValueDropdown] = useState<string>("")
 
