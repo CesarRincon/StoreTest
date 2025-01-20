@@ -7,7 +7,7 @@ const CartMode = (props: any) => {
     const { item } = props
 
     return (
-        <View style={cartModeStyles.container}>
+        <View style={cartModeStyles.container} testID="cart-mode">
             <Image source={{ uri: item?.image }} width={90} height={100} resizeMode='contain' />
             <View style={cartModeStyles.containerInfo}>
                 <Text
