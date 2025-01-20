@@ -154,6 +154,7 @@ const Payment = () => {
                             <View style={paymentStyles.containerInputs}>
                                 <Text style={paymentStyles.labelInput}>Name</Text>
                                 <TextInput
+                                    testID='input-name'
                                     style={paymentStyles.input}
                                     value={formData.name}
                                     onChangeText={(value) => handleChangeCustomer('name', value)}
@@ -174,6 +175,7 @@ const Payment = () => {
                                     style={paymentStyles.input}
                                     value={formData.lastName}
                                     onChangeText={(value) => handleChangeCustomer('lastName', value)}
+                                    testID='input-lastName'
                                 />
                                 {
                                     errors.lastName &&
@@ -187,6 +189,7 @@ const Payment = () => {
                             <View style={paymentStyles.containerInputs}>
                                 <Text style={paymentStyles.labelInput}>Email</Text>
                                 <TextInput
+                                    testID='input-email'
                                     style={paymentStyles.input}
                                     value={formData.email || customerInfo.email}
                                     onChangeText={(value) => handleChangeCustomer('email', value)}
@@ -206,6 +209,7 @@ const Payment = () => {
                                     style={paymentStyles.input}
                                     value={String(formData?.idNumber)}
                                     onChangeText={(value) => handleChangeCustomer('idNumber', value)}
+                                    testID='input-idNumber'
                                 />
                                 {
                                     errors.idNumber &&
@@ -218,7 +222,8 @@ const Payment = () => {
                             </View>
                             <View style={paymentStyles.containerInputs}>
                                 <Text style={paymentStyles.labelInput}>ID Document Type</Text>
-                                <Dropdown style={paymentStyles} data={dataTypeDocument} onChange={(value: string) => handleChangeCustomer('idDocumentType', value)} />
+                                <Dropdown style={paymentStyles} data={dataTypeDocument} onChange={(value: string) => handleChangeCustomer('idDocumentType', value)}
+                                />
                                 {
                                     errors.idDocumentType &&
                                     <Text
@@ -234,6 +239,7 @@ const Payment = () => {
                                     style={paymentStyles.input}
                                     value={String(formData.phone)}
                                     onChangeText={(value) => handleChangeCustomer('phone', value)}
+                                    testID='input-phone'
                                 />
                                 {
                                     errors.phone &&
@@ -246,6 +252,7 @@ const Payment = () => {
                                 }
                             </View>
                             <TouchableOpacity
+                                testID="save-customer"
                                 style={paymentStyles.buttonSave}
                                 onPress={() => handleSaveCustomerInfo()}
                             >
@@ -282,7 +289,7 @@ const Payment = () => {
                 <Text style={paymentStyles.titleSection}>
                     Metodos de pago
                 </Text>
-                <Dropdown style={paymentStyles} data={dataPayMethod} onChange={setPayMethod} value={payMethod} />
+                <Dropdown style={paymentStyles} data={dataPayMethod} onChange={setPayMethod} value={payMethod} testID="dropdown-pay-method" />
             </View>
             {
                 payMethod === "Credit Card" &&
@@ -313,6 +320,7 @@ const Payment = () => {
                         <Text style={paymentStyles.labelInput}>Card Number</Text>
                         <View>
                             <TextInput
+                                testID="input-cardNumber"
                                 style={paymentStyles.input}
                                 onChangeText={(value: string) => handleChangeCreditCard("cardNumber", value)}
                                 value={formCreditCard?.cardNumber.toString()}
@@ -400,6 +408,7 @@ const Payment = () => {
                         ...paymentStyles.containerButtonPay,
                         backgroundColor: !validatePayment ? "#ccc" : "#015CA9"
                     }}
+                    testID='button-pay'
                     onPress={() => handleSubmitPayment()}
                     disabled={isLoading || !validatePayment}
                 >
@@ -407,7 +416,8 @@ const Payment = () => {
                         isLoading ?
                             <ActivityIndicator color={"#fff"} size={25} />
                             :
-                            <Text style={paymentStyles.textButtonPay}>
+                            <Text style={paymentStyles.textButtonPay}
+                            >
                                 Pay
                             </Text>
                     }
