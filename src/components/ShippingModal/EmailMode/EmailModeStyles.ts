@@ -32,5 +32,8 @@ export const emailModeStyles = StyleSheet.create({
         color: "#fff",
         fontWeight: "600",
         fontSize: 16
+    },
+    textError: {
+        color: "red"
     }
 });
