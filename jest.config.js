@@ -1,6 +1,5 @@
 module.exports = {
   preset: 'react-native',
-  verbose: true,
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx}',
@@ -14,6 +13,9 @@ module.exports = {
     '<rootDir>/src/hooks/useCartPetitions.tsx',
     '<rootDir>/src/hooks/useGetColombianInfo.tsx',
     '<rootDir>/src/hooks/useLinkTo.tsx',
+    '<rootDir>/src/redux/actions.ts',
+    '<rootDir>/src/redux/reducer.ts',
+    '<rootDir>/src/redux/store.ts',
   ],
   coverageDirectory: './coverage',
   testPathIgnorePatterns: ['/android/', '/ios/'],
