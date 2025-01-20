@@ -14,6 +14,7 @@ const QuantitySelector = ({ item }: any) => {
                     style={{
                         ...quantitySelectorStyles.buttonQuantity, opacity: quantity === 1 ? 0.7 : 1
                     }}
+                    testID='decrement'
                     disabled={quantity === 1 ? true : false}
                     onPress={() => decrement()}
                 >
@@ -27,10 +28,13 @@ const QuantitySelector = ({ item }: any) => {
                     borderRadius: 8,
                     textAlign: "center",
                     paddingTop: 5
-                }}>{quantity}</Text>
+                }}
+                    testID='quantity-text'
+                >{quantity}</Text>
                 <TouchableOpacity
                     style={quantitySelectorStyles.buttonQuantity}
                     onPress={() => increment()}
+                    testID='increment'
                 >
                     <Text style={quantitySelectorStyles.textButtons}>+</Text>
                 </TouchableOpacity>
