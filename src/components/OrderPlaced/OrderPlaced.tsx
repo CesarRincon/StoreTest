@@ -29,7 +29,7 @@ const OrderPlaced = () => {
     return (
         <View style={orderPlacedStyles.container}>
             <View style={orderPlacedStyles.containerImageSuccessful}>
-                <Image source={{ uri: "https://img.icons8.com/ios-glyphs/240/015CA9/checkmark--v1.png" }} width={90} height={90} />
+                <Image source={{ uri: "https://img.icons8.com/ios-glyphs/240/015CA9/checkmark--v1.png" }} width={90} height={90} testID='order-success-image' />
                 <Text style={orderPlacedStyles.textImageSuccessful}>Successful!</Text>
             </View>
             <View style={orderPlacedStyles.containerInformationOrder}>
